@@ -1,0 +1,27 @@
+{
+  "name": "${localWorkspaceFolderBasename}",
+  "build": {
+    "dockerfile": "./Dockerfile",
+    "args": {
+      "VERSION": "latest",
+      "USERNAME": "vscode"
+    },
+    "context": ".."
+  },
+  "shutdownAction": "stopContainer",
+  "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
+  "remoteEnv": {
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  },
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind,consistency=delegated",
+  ],
+  "extensions": [
+    "rust-lang.rust"
+  ],
+  "settings": {
+    "rust-client.rustupPath": "/home/vscode/.cargo/bin/rustup"
+  },
+  "remoteUser": "vscode"
+}
