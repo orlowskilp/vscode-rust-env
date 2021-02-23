@@ -1,0 +1,4 @@
+The point of this exercise is to figure out
+what are the language complexities.
+The whole idea is to learn how to code in Rust
+and the best way is learning by doing!
