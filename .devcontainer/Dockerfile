@@ -8,7 +8,8 @@ ARG USERNAME
 RUN useradd -ms /bin/bash -G wheel ${USERNAME}
 RUN dnf install -y \
     git \
-    gcc
+    gcc \
+    make
 # Install all the Rust-specific packages
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > ~/install-rust.sh && \
     chmod a+x ~/install-rust.sh && \
