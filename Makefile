@@ -13,6 +13,10 @@ release:
 	cp target/release/$(PROJ) $(BIN_DIR)/$(PROJ)
 
 .PHONY: clean
+test:
+	$(CC) test
+
+.PHONY: clean
 clean:
 	rm -rf bin
 	$(CC) clean 
